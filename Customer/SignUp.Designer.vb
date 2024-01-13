@@ -29,7 +29,7 @@ Partial Class SignUp
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.lblPhone = New System.Windows.Forms.Label()
-        Me.txtPassword2 = New System.Windows.Forms.TextBox()
+        Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtPhone = New System.Windows.Forms.TextBox()
@@ -102,15 +102,16 @@ Partial Class SignUp
         Me.lblPhone.TabIndex = 5
         Me.lblPhone.Text = "Phone Number :"
         '
-        'txtPassword2
+        'txtConfirmPassword
         '
-        Me.txtPassword2.BackColor = System.Drawing.SystemColors.Menu
-        Me.txtPassword2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPassword2.Font = New System.Drawing.Font("Lucida Bright", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword2.Location = New System.Drawing.Point(197, 177)
-        Me.txtPassword2.Name = "txtPassword2"
-        Me.txtPassword2.Size = New System.Drawing.Size(292, 22)
-        Me.txtPassword2.TabIndex = 6
+        Me.txtConfirmPassword.BackColor = System.Drawing.SystemColors.Menu
+        Me.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtConfirmPassword.Font = New System.Drawing.Font("Lucida Bright", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(197, 177)
+        Me.txtConfirmPassword.Name = "txtConfirmPassword"
+        Me.txtConfirmPassword.Size = New System.Drawing.Size(292, 22)
+        Me.txtConfirmPassword.TabIndex = 6
+        Me.txtConfirmPassword.UseSystemPasswordChar = True
         '
         'txtPassword
         '
@@ -121,6 +122,7 @@ Partial Class SignUp
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(292, 22)
         Me.txtPassword.TabIndex = 7
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'txtEmail
         '
@@ -178,7 +180,7 @@ Partial Class SignUp
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.txtPassword2)
+        Me.Controls.Add(Me.txtConfirmPassword)
         Me.Controls.Add(Me.lblPhone)
         Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.Label2)
@@ -199,7 +201,7 @@ Partial Class SignUp
     Friend WithEvents Label2 As Label
     Friend WithEvents lblEmail As Label
     Friend WithEvents lblPhone As Label
-    Friend WithEvents txtPassword2 As TextBox
+    Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtPhone As TextBox
