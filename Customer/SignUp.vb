@@ -2,7 +2,7 @@
 Imports System.Data
 
 Public Class SignUp
-    Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\myPC\Documents\CinemaDB.accdb")
+    Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\CinemaDB.accdb")
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Hide()
         Login.Show()

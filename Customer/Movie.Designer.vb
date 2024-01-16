@@ -22,33 +22,38 @@ Partial Class Movie
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Movie))
         Me.pcbMovie1 = New System.Windows.Forms.PictureBox()
         Me.btnBook1 = New System.Windows.Forms.Button()
-        Me.pcbMovie4 = New System.Windows.Forms.PictureBox()
-        Me.pcbMovie5 = New System.Windows.Forms.PictureBox()
-        Me.pcbMovie6 = New System.Windows.Forms.PictureBox()
-        Me.pcbMovie3 = New System.Windows.Forms.PictureBox()
-        Me.pcbMovie2 = New System.Windows.Forms.PictureBox()
-        Me.btnBook6 = New System.Windows.Forms.Button()
-        Me.btnBook5 = New System.Windows.Forms.Button()
-        Me.btnBook4 = New System.Windows.Forms.Button()
-        Me.btnBook2 = New System.Windows.Forms.Button()
-        Me.btnBook3 = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.MainDataset = New Customer.MainDataset()
+        Me.MovieBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MovieTableAdapter = New Customer.MainDatasetTableAdapters.movieTableAdapter()
+        Me.lblMovieName = New System.Windows.Forms.Label()
+        Me.lblDesc = New System.Windows.Forms.Label()
+        Me.lblTime = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.MovieIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MovieNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MovieDescDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RunningTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MovieCoverDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.movieStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.pcbMovie1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMovie4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMovie5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMovie6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMovie3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMovie2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MainDataset, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MovieBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pcbMovie1
         '
-        Me.pcbMovie1.Image = CType(resources.GetObject("pcbMovie1.Image"), System.Drawing.Image)
-        Me.pcbMovie1.Location = New System.Drawing.Point(226, 32)
+        Me.pcbMovie1.Location = New System.Drawing.Point(492, 27)
         Me.pcbMovie1.Name = "pcbMovie1"
-        Me.pcbMovie1.Size = New System.Drawing.Size(100, 132)
+        Me.pcbMovie1.Size = New System.Drawing.Size(219, 296)
         Me.pcbMovie1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pcbMovie1.TabIndex = 0
         Me.pcbMovie1.TabStop = False
@@ -56,112 +61,167 @@ Partial Class Movie
         'btnBook1
         '
         Me.btnBook1.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBook1.Location = New System.Drawing.Point(226, 170)
+        Me.btnBook1.Location = New System.Drawing.Point(492, 329)
         Me.btnBook1.Name = "btnBook1"
-        Me.btnBook1.Size = New System.Drawing.Size(100, 26)
+        Me.btnBook1.Size = New System.Drawing.Size(219, 26)
         Me.btnBook1.TabIndex = 1
         Me.btnBook1.Text = "BOOK NOW"
         Me.btnBook1.UseVisualStyleBackColor = True
         '
-        'pcbMovie4
+        'DataGridView1
         '
-        Me.pcbMovie4.Image = CType(resources.GetObject("pcbMovie4.Image"), System.Drawing.Image)
-        Me.pcbMovie4.Location = New System.Drawing.Point(226, 214)
-        Me.pcbMovie4.Name = "pcbMovie4"
-        Me.pcbMovie4.Size = New System.Drawing.Size(100, 132)
-        Me.pcbMovie4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcbMovie4.TabIndex = 2
-        Me.pcbMovie4.TabStop = False
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToOrderColumns = True
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MovieIDDataGridViewTextBoxColumn, Me.MovieNameDataGridViewTextBoxColumn, Me.MovieDescDataGridViewTextBoxColumn, Me.RunningTimeDataGridViewTextBoxColumn, Me.MovieCoverDataGridViewTextBoxColumn, Me.movieStatus})
+        Me.DataGridView1.DataSource = Me.MovieBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(153, 183)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(296, 150)
+        Me.DataGridView1.TabIndex = 2
         '
-        'pcbMovie5
+        'MainDataset
         '
-        Me.pcbMovie5.Image = CType(resources.GetObject("pcbMovie5.Image"), System.Drawing.Image)
-        Me.pcbMovie5.Location = New System.Drawing.Point(407, 214)
-        Me.pcbMovie5.Name = "pcbMovie5"
-        Me.pcbMovie5.Size = New System.Drawing.Size(100, 132)
-        Me.pcbMovie5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcbMovie5.TabIndex = 3
-        Me.pcbMovie5.TabStop = False
+        Me.MainDataset.DataSetName = "MainDataset"
+        Me.MainDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'pcbMovie6
+        'MovieBindingSource
         '
-        Me.pcbMovie6.Image = CType(resources.GetObject("pcbMovie6.Image"), System.Drawing.Image)
-        Me.pcbMovie6.Location = New System.Drawing.Point(585, 214)
-        Me.pcbMovie6.Name = "pcbMovie6"
-        Me.pcbMovie6.Size = New System.Drawing.Size(100, 132)
-        Me.pcbMovie6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcbMovie6.TabIndex = 5
-        Me.pcbMovie6.TabStop = False
+        Me.MovieBindingSource.DataMember = "movie"
+        Me.MovieBindingSource.DataSource = Me.MainDataset
         '
-        'pcbMovie3
+        'MovieTableAdapter
         '
-        Me.pcbMovie3.Image = CType(resources.GetObject("pcbMovie3.Image"), System.Drawing.Image)
-        Me.pcbMovie3.Location = New System.Drawing.Point(585, 32)
-        Me.pcbMovie3.Name = "pcbMovie3"
-        Me.pcbMovie3.Size = New System.Drawing.Size(100, 132)
-        Me.pcbMovie3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcbMovie3.TabIndex = 6
-        Me.pcbMovie3.TabStop = False
+        Me.MovieTableAdapter.ClearBeforeFill = True
         '
-        'pcbMovie2
+        'lblMovieName
         '
-        Me.pcbMovie2.Image = CType(resources.GetObject("pcbMovie2.Image"), System.Drawing.Image)
-        Me.pcbMovie2.Location = New System.Drawing.Point(407, 32)
-        Me.pcbMovie2.Name = "pcbMovie2"
-        Me.pcbMovie2.Size = New System.Drawing.Size(100, 132)
-        Me.pcbMovie2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcbMovie2.TabIndex = 7
-        Me.pcbMovie2.TabStop = False
+        Me.lblMovieName.BackColor = System.Drawing.Color.Transparent
+        Me.lblMovieName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMovieName.ForeColor = System.Drawing.Color.Transparent
+        Me.lblMovieName.Location = New System.Drawing.Point(234, 56)
+        Me.lblMovieName.Name = "lblMovieName"
+        Me.lblMovieName.Size = New System.Drawing.Size(135, 23)
+        Me.lblMovieName.TabIndex = 3
         '
-        'btnBook6
+        'lblDesc
         '
-        Me.btnBook6.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBook6.Location = New System.Drawing.Point(585, 352)
-        Me.btnBook6.Name = "btnBook6"
-        Me.btnBook6.Size = New System.Drawing.Size(100, 26)
-        Me.btnBook6.TabIndex = 8
-        Me.btnBook6.Text = "BOOK NOW"
-        Me.btnBook6.UseVisualStyleBackColor = True
+        Me.lblDesc.BackColor = System.Drawing.Color.Transparent
+        Me.lblDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDesc.ForeColor = System.Drawing.Color.Transparent
+        Me.lblDesc.Location = New System.Drawing.Point(234, 89)
+        Me.lblDesc.Name = "lblDesc"
+        Me.lblDesc.Size = New System.Drawing.Size(256, 49)
+        Me.lblDesc.TabIndex = 3
         '
-        'btnBook5
+        'lblTime
         '
-        Me.btnBook5.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBook5.Location = New System.Drawing.Point(407, 352)
-        Me.btnBook5.Name = "btnBook5"
-        Me.btnBook5.Size = New System.Drawing.Size(100, 26)
-        Me.btnBook5.TabIndex = 9
-        Me.btnBook5.Text = "BOOK NOW"
-        Me.btnBook5.UseVisualStyleBackColor = True
+        Me.lblTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTime.ForeColor = System.Drawing.Color.Transparent
+        Me.lblTime.Location = New System.Drawing.Point(234, 157)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(135, 23)
+        Me.lblTime.TabIndex = 3
         '
-        'btnBook4
+        'Label1
         '
-        Me.btnBook4.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBook4.Location = New System.Drawing.Point(226, 352)
-        Me.btnBook4.Name = "btnBook4"
-        Me.btnBook4.Size = New System.Drawing.Size(100, 26)
-        Me.btnBook4.TabIndex = 10
-        Me.btnBook4.Text = "BOOK NOW"
-        Me.btnBook4.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Transparent
+        Me.Label1.Location = New System.Drawing.Point(149, 56)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 20)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Title"
         '
-        'btnBook2
+        'Label2
         '
-        Me.btnBook2.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBook2.Location = New System.Drawing.Point(407, 170)
-        Me.btnBook2.Name = "btnBook2"
-        Me.btnBook2.Size = New System.Drawing.Size(100, 26)
-        Me.btnBook2.TabIndex = 11
-        Me.btnBook2.Text = "BOOK NOW"
-        Me.btnBook2.UseVisualStyleBackColor = True
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(149, 89)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(73, 20)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Synopsis"
         '
-        'btnBook3
+        'Label3
         '
-        Me.btnBook3.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBook3.Location = New System.Drawing.Point(585, 170)
-        Me.btnBook3.Name = "btnBook3"
-        Me.btnBook3.Size = New System.Drawing.Size(100, 26)
-        Me.btnBook3.TabIndex = 12
-        Me.btnBook3.Text = "BOOK NOW"
-        Me.btnBook3.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Transparent
+        Me.Label3.Location = New System.Drawing.Point(149, 157)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(68, 20)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Playtime"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Transparent
+        Me.Label4.Location = New System.Drawing.Point(375, 157)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(65, 20)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "minutes"
+        '
+        'MovieIDDataGridViewTextBoxColumn
+        '
+        Me.MovieIDDataGridViewTextBoxColumn.DataPropertyName = "movieID"
+        Me.MovieIDDataGridViewTextBoxColumn.HeaderText = "movieID"
+        Me.MovieIDDataGridViewTextBoxColumn.Name = "MovieIDDataGridViewTextBoxColumn"
+        Me.MovieIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MovieIDDataGridViewTextBoxColumn.Visible = False
+        '
+        'MovieNameDataGridViewTextBoxColumn
+        '
+        Me.MovieNameDataGridViewTextBoxColumn.DataPropertyName = "movieName"
+        Me.MovieNameDataGridViewTextBoxColumn.HeaderText = "Title"
+        Me.MovieNameDataGridViewTextBoxColumn.Name = "MovieNameDataGridViewTextBoxColumn"
+        Me.MovieNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MovieNameDataGridViewTextBoxColumn.Width = 250
+        '
+        'MovieDescDataGridViewTextBoxColumn
+        '
+        Me.MovieDescDataGridViewTextBoxColumn.DataPropertyName = "movieDesc"
+        Me.MovieDescDataGridViewTextBoxColumn.HeaderText = "movieDesc"
+        Me.MovieDescDataGridViewTextBoxColumn.Name = "MovieDescDataGridViewTextBoxColumn"
+        Me.MovieDescDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MovieDescDataGridViewTextBoxColumn.Visible = False
+        '
+        'RunningTimeDataGridViewTextBoxColumn
+        '
+        Me.RunningTimeDataGridViewTextBoxColumn.DataPropertyName = "runningTime"
+        Me.RunningTimeDataGridViewTextBoxColumn.HeaderText = "runningTime"
+        Me.RunningTimeDataGridViewTextBoxColumn.Name = "RunningTimeDataGridViewTextBoxColumn"
+        Me.RunningTimeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.RunningTimeDataGridViewTextBoxColumn.Visible = False
+        '
+        'MovieCoverDataGridViewTextBoxColumn
+        '
+        Me.MovieCoverDataGridViewTextBoxColumn.DataPropertyName = "movieCover"
+        Me.MovieCoverDataGridViewTextBoxColumn.HeaderText = "movieCover"
+        Me.MovieCoverDataGridViewTextBoxColumn.Name = "MovieCoverDataGridViewTextBoxColumn"
+        Me.MovieCoverDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MovieCoverDataGridViewTextBoxColumn.Visible = False
+        '
+        'movieStatus
+        '
+        Me.movieStatus.DataPropertyName = "movieStatus"
+        Me.movieStatus.HeaderText = "movieStatus"
+        Me.movieStatus.Name = "movieStatus"
+        Me.movieStatus.ReadOnly = True
+        Me.movieStatus.Visible = False
         '
         'Movie
         '
@@ -169,41 +229,45 @@ Partial Class Movie
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(736, 411)
-        Me.Controls.Add(Me.btnBook3)
-        Me.Controls.Add(Me.btnBook2)
-        Me.Controls.Add(Me.btnBook4)
-        Me.Controls.Add(Me.btnBook5)
-        Me.Controls.Add(Me.btnBook6)
-        Me.Controls.Add(Me.pcbMovie2)
-        Me.Controls.Add(Me.pcbMovie3)
-        Me.Controls.Add(Me.pcbMovie6)
-        Me.Controls.Add(Me.pcbMovie5)
-        Me.Controls.Add(Me.pcbMovie4)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblTime)
+        Me.Controls.Add(Me.lblDesc)
+        Me.Controls.Add(Me.lblMovieName)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnBook1)
         Me.Controls.Add(Me.pcbMovie1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Movie"
         Me.Text = "Movie"
         CType(Me.pcbMovie1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMovie4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMovie5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMovie6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMovie3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMovie2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MainDataset, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MovieBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents pcbMovie1 As PictureBox
     Friend WithEvents btnBook1 As Button
-    Friend WithEvents pcbMovie4 As PictureBox
-    Friend WithEvents pcbMovie5 As PictureBox
-    Friend WithEvents pcbMovie6 As PictureBox
-    Friend WithEvents pcbMovie3 As PictureBox
-    Friend WithEvents pcbMovie2 As PictureBox
-    Friend WithEvents btnBook6 As Button
-    Friend WithEvents btnBook5 As Button
-    Friend WithEvents btnBook4 As Button
-    Friend WithEvents btnBook2 As Button
-    Friend WithEvents btnBook3 As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents MainDataset As MainDataset
+    Friend WithEvents MovieBindingSource As BindingSource
+    Friend WithEvents MovieTableAdapter As MainDatasetTableAdapters.movieTableAdapter
+    Friend WithEvents lblMovieName As Label
+    Friend WithEvents lblDesc As Label
+    Friend WithEvents lblTime As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents MovieIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MovieNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MovieDescDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents RunningTimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MovieCoverDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents movieStatus As DataGridViewTextBoxColumn
 End Class

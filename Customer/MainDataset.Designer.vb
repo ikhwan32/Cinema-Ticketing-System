@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("CinemaDBDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("MainDataset"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class CinemaDBDataSet
+Partial Public Class MainDataset
     Inherits Global.System.Data.DataSet
     
     Private tableadmin As adminDataTable
@@ -249,7 +249,7 @@ Partial Public Class CinemaDBDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As CinemaDBDataSet = CType(MyBase.Clone,CinemaDBDataSet)
+        Dim cln As MainDataset = CType(MyBase.Clone,MainDataset)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -391,9 +391,9 @@ Partial Public Class CinemaDBDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "CinemaDBDataSet"
+        Me.DataSetName = "MainDataset"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/CinemaDBDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/MainDataset.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableadmin = New adminDataTable()
@@ -489,7 +489,7 @@ Partial Public Class CinemaDBDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+        Dim ds As MainDataset = New MainDataset()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -818,7 +818,7 @@ Partial Public Class CinemaDBDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+            Dim ds As MainDataset = New MainDataset()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1201,7 +1201,7 @@ Partial Public Class CinemaDBDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+            Dim ds As MainDataset = New MainDataset()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1478,7 +1478,7 @@ Partial Public Class CinemaDBDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+            Dim ds As MainDataset = New MainDataset()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1742,7 +1742,8 @@ Partial Public Class CinemaDBDataSet
             Me.columnmovieID.Unique = true
             Me.columnmovieName.MaxLength = 255
             Me.columnmovieDesc.MaxLength = 255
-            Me.columnmovieStatus.ReadOnly = true
+            Me.columnmovieCover.MaxLength = 255
+            Me.columnmovieStatus.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1810,7 +1811,7 @@ Partial Public Class CinemaDBDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+            Dim ds As MainDataset = New MainDataset()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -2087,7 +2088,7 @@ Partial Public Class CinemaDBDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+            Dim ds As MainDataset = New MainDataset()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -2383,7 +2384,7 @@ Partial Public Class CinemaDBDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+            Dim ds As MainDataset = New MainDataset()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -2690,7 +2691,7 @@ Partial Public Class CinemaDBDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+            Dim ds As MainDataset = New MainDataset()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -3010,7 +3011,7 @@ Partial Public Class CinemaDBDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As CinemaDBDataSet = New CinemaDBDataSet()
+            Dim ds As MainDataset = New MainDataset()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -4501,7 +4502,7 @@ Partial Public Class CinemaDBDataSet
     End Class
 End Class
 
-Namespace CinemaDBDataSetTableAdapters
+Namespace MainDatasetTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -4705,7 +4706,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As CinemaDBDataSet.adminDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MainDataset.adminDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -4718,9 +4719,9 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As CinemaDBDataSet.adminDataTable
+        Public Overloads Overridable Function GetData() As MainDataset.adminDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As CinemaDBDataSet.adminDataTable = New CinemaDBDataSet.adminDataTable()
+            Dim dataTable As MainDataset.adminDataTable = New MainDataset.adminDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -4728,14 +4729,14 @@ Namespace CinemaDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As CinemaDBDataSet.adminDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MainDataset.adminDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MainDataset) As Integer
             Return Me.Adapter.Update(dataSet, "admin")
         End Function
         
@@ -5149,7 +5150,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As CinemaDBDataSet.bookingDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MainDataset.bookingDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -5162,9 +5163,9 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As CinemaDBDataSet.bookingDataTable
+        Public Overloads Overridable Function GetData() As MainDataset.bookingDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As CinemaDBDataSet.bookingDataTable = New CinemaDBDataSet.bookingDataTable()
+            Dim dataTable As MainDataset.bookingDataTable = New MainDataset.bookingDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -5172,14 +5173,14 @@ Namespace CinemaDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As CinemaDBDataSet.bookingDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MainDataset.bookingDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MainDataset) As Integer
             Return Me.Adapter.Update(dataSet, "booking")
         End Function
         
@@ -5644,7 +5645,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As CinemaDBDataSet.hallDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MainDataset.hallDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -5657,9 +5658,9 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As CinemaDBDataSet.hallDataTable
+        Public Overloads Overridable Function GetData() As MainDataset.hallDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As CinemaDBDataSet.hallDataTable = New CinemaDBDataSet.hallDataTable()
+            Dim dataTable As MainDataset.hallDataTable = New MainDataset.hallDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -5667,14 +5668,14 @@ Namespace CinemaDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As CinemaDBDataSet.hallDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MainDataset.hallDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MainDataset) As Integer
             Return Me.Adapter.Update(dataSet, "hall")
         End Function
         
@@ -5910,13 +5911,16 @@ Namespace CinemaDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("movieName", "movieName")
             tableMapping.ColumnMappings.Add("movieDesc", "movieDesc")
             tableMapping.ColumnMappings.Add("runningTime", "runningTime")
+            tableMapping.ColumnMappings.Add("movieCover", "movieCover")
             tableMapping.ColumnMappings.Add("movieStatus", "movieStatus")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `movie` WHERE ((`movieID` = ?) AND ((? = 1 AND `movieName` IS NULL) O"& _ 
                 "R (`movieName` = ?)) AND ((? = 1 AND `movieDesc` IS NULL) OR (`movieDesc` = ?)) "& _ 
-                "AND ((? = 1 AND `runningTime` IS NULL) OR (`runningTime` = ?)))"
+                "AND ((? = 1 AND `runningTime` IS NULL) OR (`runningTime` = ?)) AND ((? = 1 AND `"& _ 
+                "movieCover` IS NULL) OR (`movieCover` = ?)) AND ((? = 1 AND `movieStatus` IS NUL"& _ 
+                "L) OR (`movieStatus` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_movieName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieName", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -5925,23 +5929,34 @@ Namespace CinemaDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieDesc", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieDesc", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_runningTime", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "runningTime", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_runningTime", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "runningTime", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_movieCover", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieCover", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieCover", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieCover", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_movieStatus", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieStatus", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieStatus", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieStatus", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `movie` (`movieName`, `movieDesc`, `runningTime`) VALUES (?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `movie` (`movieName`, `movieDesc`, `runningTime`, `movieCover`, `movi"& _ 
+                "eStatus`) VALUES (?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("movieName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieName", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("movieDesc", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieDesc", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("runningTime", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "runningTime", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("movieCover", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieCover", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("movieStatus", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieStatus", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `movie` SET `movieName` = ?, `movieDesc` = ?, `runningTime` = ? WHERE ((`m"& _ 
-                "ovieID` = ?) AND ((? = 1 AND `movieName` IS NULL) OR (`movieName` = ?)) AND ((? "& _ 
-                "= 1 AND `movieDesc` IS NULL) OR (`movieDesc` = ?)) AND ((? = 1 AND `runningTime`"& _ 
-                " IS NULL) OR (`runningTime` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `movie` SET `movieName` = ?, `movieDesc` = ?, `runningTime` = ?, `movieCov"& _ 
+                "er` = ?, `movieStatus` = ? WHERE ((`movieID` = ?) AND ((? = 1 AND `movieName` IS"& _ 
+                " NULL) OR (`movieName` = ?)) AND ((? = 1 AND `movieDesc` IS NULL) OR (`movieDesc"& _ 
+                "` = ?)) AND ((? = 1 AND `runningTime` IS NULL) OR (`runningTime` = ?)) AND ((? ="& _ 
+                " 1 AND `movieCover` IS NULL) OR (`movieCover` = ?)) AND ((? = 1 AND `movieStatus"& _ 
+                "` IS NULL) OR (`movieStatus` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("movieName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieName", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("movieDesc", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieDesc", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("runningTime", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "runningTime", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("movieCover", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieCover", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("movieStatus", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieStatus", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_movieName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieName", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieName", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -5949,6 +5964,10 @@ Namespace CinemaDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieDesc", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieDesc", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_runningTime", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "runningTime", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_runningTime", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "runningTime", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_movieCover", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieCover", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieCover", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieCover", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_movieStatus", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieStatus", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_movieStatus", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "movieStatus", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5964,7 +5983,8 @@ Namespace CinemaDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT movieID, movieName, movieDesc, runningTime, movieStatus FROM movie"
+            Me._commandCollection(0).CommandText = "SELECT movieID, movieName, movieDesc, runningTime, movieCover, movieStatus FROM m"& _ 
+                "ovie"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5972,7 +5992,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As CinemaDBDataSet.movieDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MainDataset.movieDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -5985,9 +6005,9 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As CinemaDBDataSet.movieDataTable
+        Public Overloads Overridable Function GetData() As MainDataset.movieDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As CinemaDBDataSet.movieDataTable = New CinemaDBDataSet.movieDataTable()
+            Dim dataTable As MainDataset.movieDataTable = New MainDataset.movieDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -5995,14 +6015,14 @@ Namespace CinemaDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As CinemaDBDataSet.movieDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MainDataset.movieDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MainDataset) As Integer
             Return Me.Adapter.Update(dataSet, "movie")
         End Function
         
@@ -6024,7 +6044,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_movieID As Integer, ByVal Original_movieName As String, ByVal Original_movieDesc As String, ByVal Original_runningTime As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_movieID As Integer, ByVal Original_movieName As String, ByVal Original_movieDesc As String, ByVal Original_runningTime As Global.System.Nullable(Of Integer), ByVal Original_movieCover As String, ByVal Original_movieStatus As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_movieID,Integer)
             If (Original_movieName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -6047,6 +6067,20 @@ Namespace CinemaDBDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
+            If (Original_movieCover Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_movieCover,String)
+            End If
+            If (Original_movieStatus Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_movieStatus,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6066,7 +6100,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal movieName As String, ByVal movieDesc As String, ByVal runningTime As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal movieName As String, ByVal movieDesc As String, ByVal runningTime As Global.System.Nullable(Of Integer), ByVal movieCover As String, ByVal movieStatus As String) As Integer
             If (movieName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -6081,6 +6115,16 @@ Namespace CinemaDBDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(runningTime.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (movieCover Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(movieCover,String)
+            End If
+            If (movieStatus Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(movieStatus,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -6101,7 +6145,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal movieName As String, ByVal movieDesc As String, ByVal runningTime As Global.System.Nullable(Of Integer), ByVal Original_movieID As Integer, ByVal Original_movieName As String, ByVal Original_movieDesc As String, ByVal Original_runningTime As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Update(ByVal movieName As String, ByVal movieDesc As String, ByVal runningTime As Global.System.Nullable(Of Integer), ByVal movieCover As String, ByVal movieStatus As String, ByVal Original_movieID As Integer, ByVal Original_movieName As String, ByVal Original_movieDesc As String, ByVal Original_runningTime As Global.System.Nullable(Of Integer), ByVal Original_movieCover As String, ByVal Original_movieStatus As String) As Integer
             If (movieName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -6117,27 +6161,51 @@ Namespace CinemaDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_movieID,Integer)
-            If (Original_movieName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            If (movieCover Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_movieName,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(movieCover,String)
             End If
-            If (Original_movieDesc Is Nothing) Then
+            If (movieStatus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(movieStatus,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_movieID,Integer)
+            If (Original_movieName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_movieDesc,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_movieName,String)
             End If
-            If (Original_runningTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_runningTime.Value,Integer)
-            Else
+            If (Original_movieDesc Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_movieDesc,String)
+            End If
+            If (Original_runningTime.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_runningTime.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (Original_movieCover Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_movieCover,String)
+            End If
+            If (Original_movieStatus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_movieStatus,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -6330,7 +6398,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As CinemaDBDataSet.playTimeDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MainDataset.playTimeDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -6343,9 +6411,9 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As CinemaDBDataSet.playTimeDataTable
+        Public Overloads Overridable Function GetData() As MainDataset.playTimeDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As CinemaDBDataSet.playTimeDataTable = New CinemaDBDataSet.playTimeDataTable()
+            Dim dataTable As MainDataset.playTimeDataTable = New MainDataset.playTimeDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -6353,14 +6421,14 @@ Namespace CinemaDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As CinemaDBDataSet.playTimeDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MainDataset.playTimeDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MainDataset) As Integer
             Return Me.Adapter.Update(dataSet, "playTime")
         End Function
         
@@ -6648,7 +6716,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As CinemaDBDataSet.receiptDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MainDataset.receiptDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -6661,9 +6729,9 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As CinemaDBDataSet.receiptDataTable
+        Public Overloads Overridable Function GetData() As MainDataset.receiptDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As CinemaDBDataSet.receiptDataTable = New CinemaDBDataSet.receiptDataTable()
+            Dim dataTable As MainDataset.receiptDataTable = New MainDataset.receiptDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -6671,14 +6739,14 @@ Namespace CinemaDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As CinemaDBDataSet.receiptDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MainDataset.receiptDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MainDataset) As Integer
             Return Me.Adapter.Update(dataSet, "receipt")
         End Function
         
@@ -6998,7 +7066,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As CinemaDBDataSet.seatDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MainDataset.seatDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7011,9 +7079,9 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As CinemaDBDataSet.seatDataTable
+        Public Overloads Overridable Function GetData() As MainDataset.seatDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As CinemaDBDataSet.seatDataTable = New CinemaDBDataSet.seatDataTable()
+            Dim dataTable As MainDataset.seatDataTable = New MainDataset.seatDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -7021,14 +7089,14 @@ Namespace CinemaDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As CinemaDBDataSet.seatDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MainDataset.seatDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MainDataset) As Integer
             Return Me.Adapter.Update(dataSet, "seat")
         End Function
         
@@ -7383,7 +7451,7 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As CinemaDBDataSet.userDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As MainDataset.userDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7396,9 +7464,9 @@ Namespace CinemaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As CinemaDBDataSet.userDataTable
+        Public Overloads Overridable Function GetData() As MainDataset.userDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As CinemaDBDataSet.userDataTable = New CinemaDBDataSet.userDataTable()
+            Dim dataTable As MainDataset.userDataTable = New MainDataset.userDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -7406,14 +7474,14 @@ Namespace CinemaDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As CinemaDBDataSet.userDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As MainDataset.userDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As MainDataset) As Integer
             Return Me.Adapter.Update(dataSet, "user")
         End Function
         
@@ -7843,7 +7911,7 @@ Namespace CinemaDBDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As CinemaDBDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As MainDataset, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._hallTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.hall.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
@@ -7925,7 +7993,7 @@ Namespace CinemaDBDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As CinemaDBDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As MainDataset, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._hallTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.hall.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
@@ -7999,7 +8067,7 @@ Namespace CinemaDBDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As CinemaDBDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As MainDataset, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._receiptTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.receipt.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
@@ -8099,7 +8167,7 @@ Namespace CinemaDBDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As CinemaDBDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As MainDataset) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
