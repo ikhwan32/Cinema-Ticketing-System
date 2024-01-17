@@ -169,9 +169,9 @@ Partial Class Seat
         Me.lblRow2.ForeColor = System.Drawing.Color.White
         Me.lblRow2.Location = New System.Drawing.Point(90, 157)
         Me.lblRow2.Name = "lblRow2"
-        Me.lblRow2.Size = New System.Drawing.Size(17, 17)
+        Me.lblRow2.Size = New System.Drawing.Size(18, 17)
         Me.lblRow2.TabIndex = 66
-        Me.lblRow2.Text = "2"
+        Me.lblRow2.Text = "B"
         '
         'lblRow3
         '
@@ -181,9 +181,9 @@ Partial Class Seat
         Me.lblRow3.ForeColor = System.Drawing.Color.White
         Me.lblRow3.Location = New System.Drawing.Point(90, 237)
         Me.lblRow3.Name = "lblRow3"
-        Me.lblRow3.Size = New System.Drawing.Size(17, 17)
+        Me.lblRow3.Size = New System.Drawing.Size(19, 17)
         Me.lblRow3.TabIndex = 65
-        Me.lblRow3.Text = "3"
+        Me.lblRow3.Text = "C"
         '
         'lblRow4
         '
@@ -193,9 +193,9 @@ Partial Class Seat
         Me.lblRow4.ForeColor = System.Drawing.Color.White
         Me.lblRow4.Location = New System.Drawing.Point(90, 318)
         Me.lblRow4.Name = "lblRow4"
-        Me.lblRow4.Size = New System.Drawing.Size(17, 17)
+        Me.lblRow4.Size = New System.Drawing.Size(20, 17)
         Me.lblRow4.TabIndex = 64
-        Me.lblRow4.Text = "4"
+        Me.lblRow4.Text = "D"
         '
         'lblRow5
         '
@@ -207,7 +207,7 @@ Partial Class Seat
         Me.lblRow5.Name = "lblRow5"
         Me.lblRow5.Size = New System.Drawing.Size(17, 17)
         Me.lblRow5.TabIndex = 63
-        Me.lblRow5.Text = "5"
+        Me.lblRow5.Text = "E"
         '
         'lblRow1
         '
@@ -217,9 +217,9 @@ Partial Class Seat
         Me.lblRow1.ForeColor = System.Drawing.Color.White
         Me.lblRow1.Location = New System.Drawing.Point(90, 72)
         Me.lblRow1.Name = "lblRow1"
-        Me.lblRow1.Size = New System.Drawing.Size(17, 17)
+        Me.lblRow1.Size = New System.Drawing.Size(19, 17)
         Me.lblRow1.TabIndex = 62
-        Me.lblRow1.Text = "1"
+        Me.lblRow1.Text = "A"
         '
         'lblColumn
         '
@@ -274,6 +274,7 @@ Partial Class Seat
         Me.PictureBox20.Location = New System.Drawing.Point(313, 145)
         Me.PictureBox20.Name = "PictureBox20"
         Me.PictureBox20.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox20.TabIndex = 57
         Me.PictureBox20.TabStop = False
         '
@@ -282,6 +283,7 @@ Partial Class Seat
         Me.PictureBox19.Location = New System.Drawing.Point(373, 145)
         Me.PictureBox19.Name = "PictureBox19"
         Me.PictureBox19.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox19.TabIndex = 56
         Me.PictureBox19.TabStop = False
         '
@@ -290,6 +292,7 @@ Partial Class Seat
         Me.PictureBox18.Location = New System.Drawing.Point(313, 386)
         Me.PictureBox18.Name = "PictureBox18"
         Me.PictureBox18.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox18.TabIndex = 55
         Me.PictureBox18.TabStop = False
         '
@@ -298,6 +301,7 @@ Partial Class Seat
         Me.PictureBox17.Location = New System.Drawing.Point(373, 386)
         Me.PictureBox17.Name = "PictureBox17"
         Me.PictureBox17.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox17.TabIndex = 54
         Me.PictureBox17.TabStop = False
         '
@@ -306,6 +310,7 @@ Partial Class Seat
         Me.PictureBox16.Location = New System.Drawing.Point(313, 307)
         Me.PictureBox16.Name = "PictureBox16"
         Me.PictureBox16.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox16.TabIndex = 53
         Me.PictureBox16.TabStop = False
         '
@@ -314,6 +319,7 @@ Partial Class Seat
         Me.PictureBox15.Location = New System.Drawing.Point(373, 307)
         Me.PictureBox15.Name = "PictureBox15"
         Me.PictureBox15.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox15.TabIndex = 52
         Me.PictureBox15.TabStop = False
         '
@@ -322,6 +328,7 @@ Partial Class Seat
         Me.PictureBox14.Location = New System.Drawing.Point(373, 226)
         Me.PictureBox14.Name = "PictureBox14"
         Me.PictureBox14.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox14.TabIndex = 51
         Me.PictureBox14.TabStop = False
         '
@@ -330,6 +337,7 @@ Partial Class Seat
         Me.PictureBox13.Location = New System.Drawing.Point(313, 226)
         Me.PictureBox13.Name = "PictureBox13"
         Me.PictureBox13.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox13.TabIndex = 50
         Me.PictureBox13.TabStop = False
         '
@@ -338,6 +346,7 @@ Partial Class Seat
         Me.PictureBox12.Location = New System.Drawing.Point(170, 61)
         Me.PictureBox12.Name = "PictureBox12"
         Me.PictureBox12.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox12.TabIndex = 49
         Me.PictureBox12.TabStop = False
         '
@@ -346,6 +355,7 @@ Partial Class Seat
         Me.PictureBox11.Location = New System.Drawing.Point(313, 61)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox11.TabIndex = 48
         Me.PictureBox11.TabStop = False
         '
@@ -354,6 +364,7 @@ Partial Class Seat
         Me.PictureBox10.Location = New System.Drawing.Point(373, 61)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox10.TabIndex = 47
         Me.PictureBox10.TabStop = False
         '
@@ -362,6 +373,7 @@ Partial Class Seat
         Me.PictureBox9.Location = New System.Drawing.Point(109, 145)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox9.TabIndex = 46
         Me.PictureBox9.TabStop = False
         '
@@ -370,6 +382,7 @@ Partial Class Seat
         Me.PictureBox8.Location = New System.Drawing.Point(169, 145)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox8.TabIndex = 45
         Me.PictureBox8.TabStop = False
         '
@@ -378,6 +391,7 @@ Partial Class Seat
         Me.PictureBox7.Location = New System.Drawing.Point(110, 226)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox7.TabIndex = 44
         Me.PictureBox7.TabStop = False
         '
@@ -386,6 +400,7 @@ Partial Class Seat
         Me.PictureBox6.Location = New System.Drawing.Point(169, 226)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox6.TabIndex = 43
         Me.PictureBox6.TabStop = False
         '
@@ -394,6 +409,7 @@ Partial Class Seat
         Me.PictureBox5.Location = New System.Drawing.Point(109, 307)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 42
         Me.PictureBox5.TabStop = False
         '
@@ -402,6 +418,7 @@ Partial Class Seat
         Me.PictureBox4.Location = New System.Drawing.Point(169, 307)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 41
         Me.PictureBox4.TabStop = False
         '
@@ -410,6 +427,7 @@ Partial Class Seat
         Me.PictureBox3.Location = New System.Drawing.Point(109, 386)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 40
         Me.PictureBox3.TabStop = False
         '
@@ -418,6 +436,7 @@ Partial Class Seat
         Me.PictureBox2.Location = New System.Drawing.Point(169, 386)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 39
         Me.PictureBox2.TabStop = False
         '
@@ -438,6 +457,7 @@ Partial Class Seat
         Me.PictureBox1.Location = New System.Drawing.Point(110, 61)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(54, 43)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 37
         Me.PictureBox1.TabStop = False
         '

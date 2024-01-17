@@ -292,6 +292,11 @@
     <Content Include="CinemaDB.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\2024-01-17 23_28_53-Window.png" />
+    <None Include="Resources\2024-01-17 23_28_45-Window.png" />
+    <None Include="Resources\2024-01-17 23_28_27-Window.png" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\Available.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
