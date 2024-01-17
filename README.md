@@ -78,12 +78,11 @@ Download all the files in this repo or git to your local.
 
 ### Prerequisites
 
-* Microsoft Access 365 Runtime x64
+  * None
 
 ### Installation
 
-1. Download Access Runtime 64-bit at [here](https://support.microsoft.com/en-us/office/download-and-install-microsoft-365-access-runtime-185c5a32-8ba9-491e-ac76-91cbe3ea09c9?ui=en-us&rs=en-us&ad=us)
-2. Download or clone the repo
+1. Download or clone the repo
    ```sh
    git clone https://github.com/ikhwan32/Cinema-Ticketing-System.git
    ```
